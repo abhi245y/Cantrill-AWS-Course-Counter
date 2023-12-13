@@ -101,14 +101,3 @@ function calculateRemaningTime(mainSelector){
       title.appendChild(toggleButton);
       title.appendChild(messageContainer);
     });
-  
-    $(document).ajaxSend(function(event, xhr, settings) {
-      if (settings.type === 'GET') {    
-        var newRemainingTime = calculateRemaningTime(document.querySelector('.next-lecture').parentNode.parentNode)
-        let sectionTitleDiv = document.querySelector('.next-lecture').parentNode.previousElementSibling;
-        let remainingTimeElement = sectionTitleDiv.querySelector('.remaining-time');
-        remainingTimeElement.innerText = `<br>New Remaning Duration: ${newRemainingTime.hours} hours, ${newRemainingTime.minutes} minutes, ${newRemainingTime.seconds} seconds`
-        
-        }
-    });
-    
