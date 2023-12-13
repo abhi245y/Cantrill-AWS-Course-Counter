@@ -23,6 +23,7 @@ function calculateRemaningTime(mainSelector){
       var title = main.querySelector('.section-title');
       let totalSeconds = 0;
       var lessonsArray = [];
+      // Fetch the duration of each lesson
       main.querySelectorAll('.lecture-name').forEach((lessonslist) => {
         lessonsArray.push(lessonslist);
     
@@ -38,8 +39,12 @@ function calculateRemaningTime(mainSelector){
       totalSeconds %= 3600;
       let minutes = Math.floor(totalSeconds / 60);
       let seconds = totalSeconds % 60;
+      
+      //Calculate remaning duration for a course.
       var remainingTime = calculateRemaningTime(main);
+
       var totalLessonsMessage;
+
       if (hours !== 0) {
         totalLessonsMessage = `Total: ${lessonsArray.length.toString()} lessons.<br>Total Duration: ${hours} hours, ${minutes} minutes, ${seconds} seconds.`;
       } else {
@@ -84,7 +89,8 @@ function calculateRemaningTime(mainSelector){
       var messageContainer = document.createElement('div');
       messageContainer.style.display = 'none'; 
       messageContainer.innerHTML = `<span style="font-size: small;">${totalLessonsMessage}</span>`;
-      
+
+      // Create a span tag for showing remaning time
       var remainingTimeMessageContainer = document.createElement('span');
       remainingTimeMessageContainer.style.fontSize = 'small';
       remainingTimeMessageContainer.classList.add("remaining-time");
