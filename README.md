@@ -1,4 +1,4 @@
-# Simple Course Stats for Learn.Cantrill.io 📊
+# Simple Course Stats for Learn.Cantrill.io 
 
 ## 🎯 Purpose
 
